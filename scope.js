@@ -27,7 +27,6 @@ function createRow(){
   var localcounter=rowcounter;
   var $mydiv=$("<div/>").attr({id:"mydiv"+localcounter, class:"col-md-12 main"});
   var cnt = newFancyCounter();
-  var $para=$("<p/>").attr({ id:"counter"+localcounter, value:"word", class: "mypara"});
   var $add = $('<input/>').attr({ type: 'button', class: 'guess', id: 'add'+localcounter, value: "+"});
   var $delete = $('<input/>').attr({ type: 'button', class: 'guess', id: 'delete'+localcounter, value: "delete"});
   var $less = $('<input/>').attr({ type: 'button', class: 'guess', id: 'less'+localcounter, value: "-"});
@@ -45,17 +44,14 @@ function createRow(){
 
     $add.click(function(event){
       temp=cnt.more();
-      $("p#counter"+localcounter).html(temp);
       });
 
       $less.click(function(event){
         temp=cnt.less();
-        $("p#counter"+localcounter).html(temp);
         });
 
         $reset.click(function(event){
           temp=cnt.reset();
-          $("p#counter"+localcounter).html(temp);
           });
 
       $delete.click(function(event){
