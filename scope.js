@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-  var rowcounter = 0;
-
   function newFancyCounter(){
     var counter=0;
     return{
@@ -23,17 +21,15 @@ $(document).ready(function() {
 
 
 function createRow(){
-  rowcounter++;
-  var localcounter=rowcounter;
   var cnt = newFancyCounter();
 
   var $top=$("#newrow");
-  var $mydiv=$("<div/>").attr({id:"mydiv"+localcounter, class:"col-md-12 main"});
-  var $span = $('<span/>').attr({class:'className', id:"counter"+localcounter}).html("0   ");
-  var $add = $('<input/>').attr({ type: 'button', class: 'guess', id: 'add'+localcounter, value: "+"});
-  var $delete = $('<input/>').attr({ type: 'button', class: 'guess', id: 'delete'+localcounter, value: "delete"});
-  var $less = $('<input/>').attr({ type: 'button', class: 'guess', id: 'less'+localcounter, value: "-"});
-  var $reset = $('<input/>').attr({ type: 'button', class: 'guess', id: 'reset'+localcounter, value: "reset"});
+  var $mydiv=$("<div/>").attr({class:"col-md-12 main"});
+  var $span = $('<span/>').html("0   ");
+  var $add = $('<input/>').attr({ type: 'button', value: "+"});
+  var $delete = $('<input/>').attr({ type: 'button', value: "delete"});
+  var $less = $('<input/>').attr({ type: 'button', value: "-"});
+  var $reset = $('<input/>').attr({ type: 'button', value: "reset"});
 
 
   $top.append($mydiv);
